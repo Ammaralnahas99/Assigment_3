@@ -1,0 +1,16 @@
+1- The event loop continuously checks the event queue for callbacks ready to execute, and pushes them to the call stack when it is empty
+
+2-Libuv is a C library used by Node.js to provide Cross-platform support for threads, timers, and the event loop and to handle the under-the-hood asynchronous operations
+
+3-JS calls async function → registers callback → main thread continues → libuv handles I/O → callback is pushed to event queue → event loop executes it
+
+4-Call Stack:Holds currently executing functions. LIFO structure
+Event Queue:Queue of callbacks waiting to be executed when stack is empty
+Event Loop:Continuously checks if call stack is empty and moves callbacks from event queue to stack
+
+5-Node.js has a thread pool with default size 4
+ gow to change the size :set UV_THREADPOOL_SIZE=8 
+
+6-Blocking code: Stops the call stack until execution finishes
+
+Non-blocking code: Executes async operations and continues running the main thread, callbacks handled late 
