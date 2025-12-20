@@ -33,18 +33,18 @@ const { pipeline } = require("node:stream");
 // q2();
 
 //3)
-const q3 = function () {
-    const readStream = fs.createReadStream("./data.txt");
-    const gzipStream = zlib.createGzip();
-    const writeStream = fs.createWriteStream("./data.txt.gz");
+// const q3 = function () {
+//     const readStream = fs.createReadStream("./data.txt");
+//     const gzipStream = zlib.createGzip();
+//     const writeStream = fs.createWriteStream("./data.txt.gz");
 
-    pipeline(readStream, gzipStream, writeStream, (err) => {
-        if (err) {
-            console.error("Pipeline failed:", err);
-        } else {
-            console.log("File compressed successfully");
-        }
-    }
-    );
-};
-q3()
+//     pipeline(readStream, gzipStream, writeStream, (err) => {
+//         if (err) {
+//             console.error("Pipeline failed:", err);
+//         } else {
+//             console.log("File compressed successfully");
+//         }
+//     }
+//     );
+// };
+// q3()
